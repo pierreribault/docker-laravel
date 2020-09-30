@@ -29,8 +29,9 @@ services:
       - laravel_internal
     volumes:
       - storage:/app/storage
+      - ./app/.env.prod:/app/.env
     environment:
-      - WAIT_HOSTS=redis:6379, mariadb:3306, mongodb:27017
+      - WAIT_HOSTS=redis:6379, mariadb:3306
     labels:
       ofelia.enabled: "true"
       ofelia.job-exec.horizon.schedule: "@every 60s"
