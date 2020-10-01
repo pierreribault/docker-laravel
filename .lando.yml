@@ -3,13 +3,20 @@ recipe: laravel
 
 config:
   php: '7.3'
-  webroot: app/public
+  webroot: /public
   xdebug: false
   via: nginx:1.18
   database: mariadb:10.4
   cache: redis:5
 
 services:
+  appserver:
+    type: php:custom
+    overrides:
+      image: lando/php:7.3-custom
+      build:
+        context: ../.lando/php-fpm
+        dockerfile: Dockerfile
   pma:
     type: phpmyadmin:5.0
     overrides:
@@ -22,20 +29,6 @@ services:
     portforward: true
     hogfrom:
       - appserver
-  appserver:
-    type: php:7.3
-    scanner: false
-    overrides:
-      ports:
-        - '22'
-    build_as_root:
-      - mkdir /run/sshd
-      - sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
-      - sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-      - echo root:password | chpasswd
-      - service ssh reload
-    run_as_root:
-      - service ssh start
 
 tooling:
   npm:
