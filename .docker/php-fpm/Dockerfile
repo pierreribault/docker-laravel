@@ -60,9 +60,6 @@ RUN chmod +x /docker-entrypoint.sh
 COPY ./app /app
 RUN chown -R www-data:www-data /app
 
-# Preparation of Laravel
-RUN php artisan storage:link
-
 # Modify php-fpm permissions
 RUN chown www-data:daemon /opt/bitnami/php/tmp \
     && chmod 775 /opt/bitnami/php/tmp

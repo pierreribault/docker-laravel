@@ -5,6 +5,7 @@
 /wait
 
 # Laravel start
+php artisan storage:link
 php artisan config:cache
 php artisan cache:clear
 php artisan view:clear

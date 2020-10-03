@@ -15,6 +15,7 @@ services:
       - laravel_external
     volumes:
       - storage:/app/storage
+      - cache:/app/bootstrap/cache
     environment:
       - WAIT_HOSTS=php-fpm:9000
 
@@ -74,3 +75,4 @@ networks:
 
 volumes:
   storage:
+  cache:
