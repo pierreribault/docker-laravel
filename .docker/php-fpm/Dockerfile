@@ -35,6 +35,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
 ENV LANG="fr_FR.UTF-8" \
     LANGUAGE="fr_FR:fr" \
     LC_ALL="fr_FR.UTF-8" \
+    XDG_CONFIG_HOME=/app \
     WAIT_VERSION="2.7.3"
 
 # Add Docker-compose-wait
