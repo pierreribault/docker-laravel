@@ -1,6 +1,5 @@
 FROM bitnami/php-fpm:7.3-prod AS php-fpm
-LABEL maintainer="Pierre Ribault <pribault@svp.com>"
-LABEL description="PHP-FPM 7.3 for Clients V2"
+LABEL maintainer="Pierre Ribault <contact@pierreribault.fr>"
 
 # This image is designed for Laravel requirements
 # Extensions list activated

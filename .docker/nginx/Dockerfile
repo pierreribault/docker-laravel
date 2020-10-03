@@ -1,6 +1,5 @@
 FROM bitnami/nginx:1.18 AS nginx
-LABEL maintainer="Pierre Ribault <pribault@svp.com>"
-LABEL description="Nginx for Clients V2"
+LABEL maintainer="Pierre Ribault <ontact@pierreribault.fr>"
 
 USER root
 

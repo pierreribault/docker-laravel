@@ -1,6 +1,5 @@
 FROM mcuadros/ofelia:latest AS ofelia
-LABEL maintainer="Pierre Ribault <pribault@svp.com>"
-LABEL description="Ofelia for Clients V2"
+LABEL maintainer="Pierre Ribault <ontact@pierreribault.fr>"
 
 ENV WAIT_VERSION="2.7.3"
 
